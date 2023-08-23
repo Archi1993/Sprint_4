@@ -64,4 +64,10 @@ public class MainPage {
         String textElement = driver.findElement(answerAccordionText).getText();
         return textElement;
     }
+
+    //Метод сбора локатора из частей и клик по нему
+    public void buildLocatorAndClick(int accordionLocator) {
+        driver.findElement(By.xpath(String.format("%s%d']", getAccordionLocator(), accordionLocator))).click();
+    }
+
 }

@@ -43,16 +43,16 @@ public class CheckTextInMainPageAccordionTest {
 
 
     @Test
-    public void CheckTextInAccordion() {
+    public void checkTextInAccordion() {
 
         WebDriver driver = driverRule.getDriver();
         MainPage objMainPage = new MainPage(driver);
         objMainPage.scrollToMainQuestionLabel(driver);
-        driver.findElement(By.xpath(String.format("%s%d']", objMainPage.getAccordionLocator(), accordionLocator))).click();
+        objMainPage.buildLocatorAndClick(accordionLocator);
+        //driver.findElement(By.xpath(String.format("%s%d']", objMainPage.getAccordionLocator(), accordionLocator))).click();
         String answerText = objMainPage.getAnswerAccordionText();
         MatcherAssert.assertThat(result, equalTo(answerText));
     }
-
 }
 
 
