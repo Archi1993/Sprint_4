@@ -49,7 +49,6 @@ public class CheckTextInMainPageAccordionTest {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.scrollToMainQuestionLabel(driver);
         objMainPage.buildLocatorAndClick(accordionLocator);
-        //driver.findElement(By.xpath(String.format("%s%d']", objMainPage.getAccordionLocator(), accordionLocator))).click();
         String answerText = objMainPage.getAnswerAccordionText();
         MatcherAssert.assertThat(result, equalTo(answerText));
     }
